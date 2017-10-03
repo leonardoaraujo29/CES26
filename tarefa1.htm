@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 id = "titulo" style="color:red">Tarefa 1</h1> 
+<button onclick="changeColor()">Mudar Cor</button>
+
+<p></p>
+Paragrafo: <input type="text" id="paragraph" value=""><br><br>
+<button onclick="createParagraph()">Criar Parágrafo</button>
+<button onclick="removeParagraph()">Remover Parágrafos</button>
+<script>
+function changeColor() {
+	var r = Math.floor((Math.random() * 255) );
+	var g = Math.floor((Math.random() * 255) );
+	var b = Math.floor((Math.random() * 255) );
+	var str1 = "rgb(";
+	str1 = str1.concat(r.toString());
+	str1 = str1.concat(",");
+	str1 = str1.concat(g.toString());
+	str1 = str1.concat(",");
+	str1 = str1.concat(b.toString());
+	str1 = str1.concat(")");
+    document.getElementById("titulo").style.color = str1;
+}
+
+function createParagraph() { 
+
+	var heading = document.createElement("p");
+	heading.className = "paragrafo";
+	var heading_text = document.createTextNode(document.getElementById("paragraph").value); 
+	heading.appendChild(heading_text); 
+	document.body.appendChild(heading); }
+	
+	function removeParagraph() { 
+
+	var elements = document.getElementsByClassName("paragrafo");
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+</script>
+
+</body>
+</html>

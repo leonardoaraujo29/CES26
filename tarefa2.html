@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<div style="text-align:center"> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br><br>
+  <iframe id = "video1" type="text/html" 
+    width="640" 
+    height="385" 
+    src="http://www.youtube.com/embed/AcekWw-swgo"
+    frameborder="0">
+</iframe>
+</div> 
+<script> 
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+    if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); 
+} 
+
+function makeBig() { 
+    myVideo.width = 560; 
+} 
+
+function makeSmall() { 
+    myVideo.width = 320; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 420; 
+} 
+</script> 
+
+<p>Video courtesy of <a href="https://www.youtube.com/watch?v=AcekWw-swgo" target="_blank">Youtube</a>.</p>
+</body> 
+</html>
